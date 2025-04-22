@@ -13,6 +13,12 @@ def analyze_book(filepath):
     print("============= END ===============")
 
 
+def get_book_text(filepath):
+    with open(filepath) as f:
+        file_contents = f.read()
+    return file_contents
+
+
 def get_words_number(text):
     split_text = text.split()
     count = 0
@@ -41,9 +47,3 @@ def sort_dict(dict):
         char_list.append({"char": key, "value": value})
     char_list.sort(reverse=True, key=sort_on)
     return char_list
-
-
-def get_book_text(filepath):
-    with open(filepath) as f:
-        file_contents = f.read()
-    return file_contents
